@@ -1,0 +1,36 @@
+[
+  { "name": "Gasabo", "province": "Kigali City", "lat": -1.89, "lon": 30.15 },
+  { "name": "Kicukiro", "province": "Kigali City", "lat": -1.99, "lon": 30.10 },
+  { "name": "Nyarugenge", "province": "Kigali City", "lat": -1.95, "lon": 30.05 },
+
+  { "name": "Burera", "province": "Northern", "lat": -1.47, "lon": 29.83 },
+  { "name": "Gakenke", "province": "Northern", "lat": -1.69, "lon": 29.78 },
+  { "name": "Gicumbi", "province": "Northern", "lat": -1.58, "lon": 30.07 },
+  { "name": "Musanze", "province": "Northern", "lat": -1.50, "lon": 29.63 },
+  { "name": "Rulindo", "province": "Northern", "lat": -1.73, "lon": 29.99 },
+
+  { "name": "Gisagara", "province": "Southern", "lat": -2.60, "lon": 29.83 },
+  { "name": "Huye", "province": "Southern", "lat": -2.60, "lon": 29.74 },
+  { "name": "Kamonyi", "province": "Southern", "lat": -2.00, "lon": 29.90 },
+  { "name": "Muhanga", "province": "Southern", "lat": -2.08, "lon": 29.75 },
+  { "name": "Nyamagabe", "province": "Southern", "lat": -2.47, "lon": 29.57 },
+  { "name": "Nyanza", "province": "Southern", "lat": -2.35, "lon": 29.75 },
+  { "name": "Nyaruguru", "province": "Southern", "lat": -2.63, "lon": 29.55 },
+  { "name": "Ruhango", "province": "Southern", "lat": -2.22, "lon": 29.78 },
+
+  { "name": "Bugesera", "province": "Eastern", "lat": -2.15, "lon": 30.09 },
+  { "name": "Gatsibo", "province": "Eastern", "lat": -1.60, "lon": 30.40 },
+  { "name": "Kayonza", "province": "Eastern", "lat": -1.90, "lon": 30.51 },
+  { "name": "Kirehe", "province": "Eastern", "lat": -2.27, "lon": 30.65 },
+  { "name": "Ngoma", "province": "Eastern", "lat": -2.16, "lon": 30.54 },
+  { "name": "Nyagatare", "province": "Eastern", "lat": -1.30, "lon": 30.33 },
+  { "name": "Rwamagana", "province": "Eastern", "lat": -1.95, "lon": 30.43 },
+
+  { "name": "Karongi", "province": "Western", "lat": -2.06, "lon": 29.35 },
+  { "name": "Ngororero", "province": "Western", "lat": -1.87, "lon": 29.62 },
+  { "name": "Nyabihu", "province": "Western", "lat": -1.65, "lon": 29.51 },
+  { "name": "Nyamasheke", "province": "Western", "lat": -2.33, "lon": 29.10 },
+  { "name": "Rubavu", "province": "Western", "lat": -1.68, "lon": 29.26 },
+  { "name": "Rusizi", "province": "Western", "lat": -2.48, "lon": 28.91 },
+  { "name": "Rutsiro", "province": "Western", "lat": -1.95, "lon": 29.33 }
+]
