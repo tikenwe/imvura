@@ -1,15 +1,22 @@
-{
-    "name": "imvura",
-    "version": "1.0.0",
-    "description": "7-day rain and planting planner for Rwandan farmers, powered by Open-Meteo",
-    "main": "server.js",
-    "scripts": {
-        "start": "node server.js"
-    },
-    "author": "Testimony Ikenwe",
-    "license": "ISC",
-    "dependencies": {
-        "dotenv": "^16.4.5",
-        "express": "^4.21.2"
-    }
-}
+require('dotenv').config();
+const express = require('express');
+const os = require('os');
+const path = require('path');
+const app = express();
+const PORT = process.env.PORT || 3000;
+
+app.use((req, res, next) => {
+    res.set('X-Served-By', os.hostname());
+    next();
+});
+
+app.use(express.static(path.join(__dirname, 'public')));
+app.get('/api/health', (req, res) => {
+    res.json({ status: 'ok', server: os.hostname() });
+});
+
+
+
+app.listen(PORT, () => {
+    console.log( `Imvura running on http://localhost:${PORT}`);
+});
