@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Imvura · Rain planner for Rwandan farmers</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="hero">
+        <h1>Imvura <span aria-hidden="true">🌧️</span></h1>
+        <p>7-day rain outlook for every district in Rwanda, with simple advice on when to plant, spray and dry your harvest.</p>
+    </header>
+
+    <main>
+        <section class="controls" aria-label="Search and filters">
+            <label>
+                Search district
+                <input type="search" id="search" placeholder="e.g. Musanze">
+            </label>
+
+            <label>
+                Province
+                <select id="province">
+                    <option value="">All provinces</option>
+                    <option>Kigali City</option>
+                    <option>Northern</option>
+                    <option>Southern</option>
+                    <option>Eastern</option>
+                    <option>Western</option>
+                </select>
+            </label>
+
+            <label>
+                Crop
+                <select id="crop">
+                    <option value="beans">Beans</option>
+                    <option value="maize">Maize</option>
+                    <option value="potatoes">Potatoes</option>
+                </select>
+            </label>
+
+            <label>
+                Sort by
+                <select id="sort">
+                    <option value="rain-desc">Most rain first</option>
+                    <option value="rain-asc">Least rain first</option>
+                    <option value="temp-desc">Hottest first</option>
+                    <option value="name">District name (A–Z)</option>
+                </select>
+            </label>
+
+            <label class="checkbox">
+                <input type="checkbox" id="heavy">
+                Only heavy rain (50 mm+ this week)
+            </label>
+        </section>
+
+        <p id="status" role="status" aria-live="polite">Loading forecast…</p>
+
+        <div class="table-wrap">
+            <table>
+                <thead>
+                    <tr>
+                        <th scope="col">District</th>
+                        <th scope="col">Province</th>
+                        <th scope="col">Rain this week</th>
+                        <th scope="col">Rainy days</th>
+                        <th scope="col">Temperature</th>
+                        <th scope="col">Good days to…</th>
+                    </tr>
+                </thead>
+                <tbody id="results"></tbody>
+            </table>
+        </div>
+    </main>
+
+    <footer>
+        <p>Weather data by <a href="https://open-meteo.com/" target="_blank" rel="noopener">Open-Meteo.com</a> (CC BY 4.0).</p>
+        <p>Advice uses simple rain rules of thumb. It is not professional agricultural advice.</p>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>
