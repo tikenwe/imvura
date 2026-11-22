@@ -1,4 +1,4 @@
-const {
+const CROPS = {
     beans: { name: 'Beans', plantMin: 5, plantMax: 20 },
     maize: { name: 'Maize', plantMin: 5, plantMax: 30 },
     potatoes: { name: 'Potatoes', plantMin: 5, plantMax: 25 },
