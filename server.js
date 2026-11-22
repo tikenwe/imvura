@@ -2,6 +2,7 @@ require('dotenv').config();
 const express = require('express');
 const os = require('os');
 const path = require('path');
+const { getForecasts } = require('./services/weather');
 const app = express();
 const PORT = process.env.PORT || 3000;
 
@@ -11,11 +12,22 @@ app.use((req, res, next) => {
 });
 
 app.use(express.static(path.join(__dirname, 'public')));
+
 app.get('/api/health', (req, res) => {
     res.json({ status: 'ok', server: os.hostname() });
 });
 
-
+app.get('/api/forecast', async (req, res) => {
+    try {
+        const forecasts = await getForecasts();
+        res.json(forecasts);
+    } catch (error) {
+        console.error('Forecast error:', error.message);
+        res.status(502).json ({
+            error: 'Weather data is unavailable right now. Please try again in a few minutes.',
+        });
+     }
+    });
 
 app.listen(PORT, () => {
     console.log( `Imvura running on http://localhost:${PORT}`);
