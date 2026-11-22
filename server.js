@@ -4,6 +4,7 @@ const os = require('os');
 const path = require('path');
 const { getForecasts } = require('./services/weather');
 const { getCached, setCached } = require('./services/cache');
+const { CROPS, getAdvice } = require('./services/advice');
 const app = express();
 const PORT = process.env.PORT || 3000;
 
@@ -19,15 +20,26 @@ app.get('/api/health', (req, res) => {
 });
 
 app.get('/api/forecast', async (req, res) => {
+    const crop = req.query.crop;
+
+    if (crop && !CROPS[crop]) {
+        return res.status(400).json({
+            error: 'Unknown crop. Please choose beans, maize or potatoes.',
+        });
+    }
+
     try {
-        const cached = getCached();
-        if (cached) {
-            return res.json(cached);
+        let forecasts = getCached();
+        if (!forecasts) {
+            forecasts = await getForecasts();
+            setCached(forecasts);
         }
 
-        const forecasts = await getForecasts();
-        setCached(forecasts);
-        res.json(forecasts);
+        const result = crop
+            ? forecasts.map((d) => ({ ...d, advice: getAdvice(d.daily, crop) }))
+            : forecasts;
+
+        res.json(result);
     } catch (error) {
         console.error('Forecast error:', error.message);
         res.status(502).json({
