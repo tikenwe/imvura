@@ -4,7 +4,7 @@
 
 **Live app:** https://www.testimonyikenweschool.tech/
 
-**Demo video:*https://youtu.be/Mnuw8uHxor8* 
+**Demo video:** https://youtu.be/Mnuw8uHxor8
 
 ---
 
